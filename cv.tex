@@ -1,0 +1,159 @@
+% Jason R. Blevins - Curriculum Vitae
+%
+% Copyright (C) 2004-2011 Jason R. Blevins
+%
+% You may use use this document as a template to create your own CV
+% and you may redistribute the source code freely.  No attribution is
+% required in any resulting documents.  I do ask that you please leave
+% this notice and the above URL in the source code if you choose to
+% redistribute this file.
+
+\documentclass[12pt,letterpaper]{article}
+
+\makeatletter
+\let\saved@bibitem\@bibitem % < -- save to prevent problems due to the command getting redefined...
+\makeatother
+
+\usepackage{bibentry}
+\usepackage[breaklinks]{hyperref}
+%\usepackage[]{breakurl}
+\usepackage{geometry}
+
+\usepackage{color}
+\definecolor{gray}{rgb}{0.4,0.4,0.4}
+
+% Fonts
+\usepackage[T1]{fontenc}
+\usepackage[urw-garamond]{mathdesign}
+
+% Set your name here
+\def\name{John T. Foster}
+
+% The following metadata will show up in the PDF properties
+\hypersetup{
+  colorlinks = true,
+  urlcolor = gray,
+  pdfauthor = {\name},
+  pdfkeywords = {mechanical engineering, peridynamics, Kolsky bar, split-Hopkinson bar, high strain rate},
+  pdftitle = {\name: Curriculum Vitae},
+  pdfsubject = {Curriculum Vitae},
+  pdfpagemode = UseNone
+}
+
+\geometry{
+  body={6.5in, 9.0in},
+  left=1.0in,
+  top=1.0in
+}
+
+% Customize page headers
+\pagestyle{myheadings}
+\markright{\name}
+\thispagestyle{empty}
+
+% Custom section fonts
+\usepackage{sectsty}
+\sectionfont{\rmfamily\mdseries\Large}
+\subsectionfont{\rmfamily\mdseries\itshape\large}
+
+% Other possible font commands include:
+% \ttfamily for teletype,
+% \sffamily for sans serif,
+% \bfseries for bold,
+% \scshape for small caps,
+% \normalsize, \large, \Large, \LARGE sizes.
+
+% Don't indent paragraphs.
+\setlength\parindent{0em}
+
+% Make lists without bullets and compact spacing
+\renewenvironment{itemize}{
+  \begin{list}{}{
+    \setlength{\leftmargin}{1.5em}
+    \setlength{\itemsep}{0.25em}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0.25em}
+  }
+}{
+  \end{list}
+}
+
+
+\begin{document}
+\sloppy
+
+\begingroup
+\makeatletter
+\let\@bibitem\saved@bibitem % <-- restore the original command immediately before use 
+\nobibliography{../include/all}
+\endgroup
+
+
+% Place name at left
+{\huge \name}
+
+% Alternatively, print name centered and bold:
+%\centerline{\huge \bf \name}
+
+\bigskip
+
+\begin{minipage}[t]{0.5\textwidth}
+  Department of Mechanical Engineering \\
+  The University of Texas at San Antonio \\
+  One UTSA Circle \\
+  San Antonio, TX 78249
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+  Phone: (210) 458-5521 \\
+  Fax: (210) 458-6504 \\
+  Office: AET 2.330 \\
+  Email: \href{mailto:john.foster@utsa.edu}{john.foster@utsa.edu} \\
+  Homepage: \href{http://idl.utsa.edu/}{http://idl.utsa.edu/}
+\end{minipage}
+
+\section*{Education}
+
+\begin{itemize}
+  \item Ph.D. Purdue University, 2009.
+    % Received Dec 19, 2009
+    \begin{itemize}
+    \item \textit{Dissertation:}
+      Dynamic Crack Initiation Toughness: Experiments and Peridynamic Modeling.
+    \end{itemize}
+  \item M.S. Mechanical Engineering, Texas Tech University, 2004.
+    % Received Dec. 18, 2004
+  \item B.S. Mechanical Engineering, \textit{Cum Laude},
+   Texas Tech University, 2002.
+    % Received Dec. 14, 2002
+\end{itemize}
+
+\section*{Professional Appointments}
+
+\begin{itemize}
+\item Assistant Professor, Department of Mechanical Engineering, \\ The University of Texas at San Antonio,\\
+  August 2011--present. 
+
+\item Adjunct Associate Professor, Department of Mechanical Engineering, \\ The University of New Mexico, \\August 2010--December 2010.
+
+\item Senior Member of the Technical Staff, Terminal Ballistics Technology Department, \\ Sandia National Laboratories, Albuquerque, NM, \\ January 2006--August 2011.
+
+\item Member of the Technical Staff, Terminal Ballistics Technology Department, \\ Sandia National Laboratories, Albuquerque, NM, \\ August 2004--January 2006.
+\end{itemize}
+
+\input{sections/journal_papers}
+\input{sections/conf_proceedings}
+\input{sections/tech_reports}
+\input{sections/oral_presentations}
+\input{sections/other.tex}
+
+\vfill 
+% Footer
+\begin{center}
+  \begin{small}
+    Last updated: \today
+  \end{small}
+\end{center}
+
+\bibliographystyle{plainurl}
+
+\end{document}
