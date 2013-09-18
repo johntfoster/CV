@@ -1,0 +1,20 @@
+#!/bin/bash
+
+source /Users/fes788/.bash_profile
+
+cd /Users/fes788/Documents/LaTeX/CV
+
+make
+make html
+
+scp cv_html.html root@idl.utsa.edu:/Library/WebServer/Documents/wp-content/cv.html
+scp cv.pdf root@idl.utsa.edu:/Library/WebServer/Documents/wp-content/cv.pdf
+
+ssh root@idl.utsa.edu 'chown _www /Library/WebServer/Documents/wp-content/cv.pdf'
+ssh root@idl.utsa.edu 'chown _www /Library/WebServer/Documents/wp-content/cv.html'
+ssh root@idl.utsa.edu 'chmod a+x /Library/WebServer/Documents/wp-content/cv.pdf'
+ssh root@idl.utsa.edu 'chmod a+x /Library/WebServer/Documents/wp-content/cv.html'
+
+make clean
+
+exit

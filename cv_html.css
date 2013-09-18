@@ -1,0 +1,275 @@
+
+/* cv_html.css from cv_html.tex (TeX4ht, 2013-09-18 13:27:00) */
+  /*
+Theme Name: UTSA
+Description: A Wordpress theme built to match the stylings of websites at UTSA
+Version: 0.1.0
+Author: John T. Foster
+Tags: blue, orange
+Text Domain: utsa
+
+*/
+
+
+
+/* Begin Typography & Colors */
+* { margin: 0;padding: 0 }
+
+#wrap { min-height: 100% }
+
+body {
+  color: #555;
+  font: normal 12px/1.5 Arial,Helvetica,sans-serif;
+  margin: 0 }
+
+html,body { height: 100% }
+
+#main {
+  background: #fff;
+  overflow: auto;
+  padding: 40px 0 135px }
+
+img {
+  background: #fff;
+  border: 1px solid #aab8c9;
+  padding: 4px }
+
+/* @group Grid */
+.grid_1 { width: 60px }
+.grid_2 { width: 140px }
+.grid_3 { width: 220px }
+.grid_4 { width: 300px }
+.grid_5 { width: 380px }
+.grid_6 { width: 460px }
+.grid_7 { width: 540px }
+.grid_8 { width: 620px }
+                                                                                         
+                                                                                         
+.grid_9 { width: 700px }
+.grid_10 { width: 780px }
+.grid_11 { width: 860px }
+.grid_12 { width: 940px }
+
+.column {
+  display: inline;
+  float: left;
+  margin: 0 10px;
+  overflow: hidden }
+
+.row {
+  margin: 0 auto;
+  overflow: hidden;
+  width: 960px }
+
+  .row .row {
+     display: inline-block;
+     margin: 0 -10px;
+     width: auto }
+/* @end */
+
+/* @group Branding */
+#branding { background: #002a5c; padding: 15px 0; font-size: 11px; }
+
+  #branding img {
+     border: none;
+     padding: 0;
+     vertical-align: baseline}
+
+  #branding a { color: #fff; }
+     #branding a:hover { color: #f47321; }
+
+  #branding ul { overflow: hidden; margin: 8px 0 0 0; padding: 0; }
+     #branding ul li {
+       float: left;
+       list-style-type: none;
+       padding-right: 15px; }
+/* @end */
+
+/* @group Header */
+#header {
+  background: #3b6ca1;
+  padding: 20px 0}
+
+                                                                                         
+                                                                                         
+  #header h1 {
+     color: #fff;
+     font: bold 32px/1.3 Arial,Helvetica,sans-serif;
+     margin: 0;
+     text-shadow: #557192 1px 1px 1px;
+     text-transform: none }
+
+  #header p {
+     color: #fff;
+     font: normal 14px/1.5 Georgia,"Times New Roman",Times,serif;
+     margin: 0;}
+/* @end */
+
+/* @group Navigation */
+#nav { background: #d8e7f8; border-bottom: 1px solid #cbdaeb; }
+
+  #nav ul {
+     font: bold 11px/2 Arial,Helvetica,sans-serif;
+     letter-spacing: 1px;
+     list-style-type: none;
+     overflow: hidden;
+     padding: 0;
+     text-shadow: #d5dce4 1px 1px 1px;
+     text-transform: uppercase; }
+
+     #nav li { float: left; margin: 0;}
+
+  #nav a { color: #3b6ca1; display: block; padding: 5px 20px; }
+     /*#nav a.active, #nav a.active:hover { background: #3b6ca1; color: #fff; text-shadow: none; }*/
+     #nav li.current-menu-item a, #nav li.current-menu-parent a { background: #3b6ca1; color: #fff; text-shadow: none; }
+     #nav a:hover { background: #002a5c; color: #fff; text-shadow: none; }
+/* @end */
+
+/* @group General Text Styles */
+h1,h2,h3,h4,h5,h6 {
+  color: #002a5c;
+  font-family: Georgia,"Times New Roman",Times,serif;
+  font-weight: normal;
+  letter-spacing: 1px;
+  text-transform: uppercase }
+
+h1 { font-size: 30px; line-height: 1.2; margin-bottom: 15px; }
+h2 { font-size: 24px; line-height: 1.2; margin: 15px 0 5px; }
+  .intro h2 { font-size: 18px; margin: 10px 0 0; text-transform: none; }
+h3 { font-size: 18px; line-height: 1.2; margin: 15px 0 5px}
+                                                                                         
+                                                                                         
+  .intro h3 { font-size: 24px; margin-top: 5px; }
+h4 { font-size: 14px; line-height: 1.2; margin: 15px 0 5px }
+  h4.edu { font-size: 22px; margin: 0 0 20px 0;text-transform: none; }
+  h4.subPubList { padding-left: 10px; text-transform: none; }
+h5 { font-size: 12px; line-height: 1.2; margin: 15px 0 5px }
+  h5.edu { margin: 15px 0 0 0 ; }
+  h5.teaching { margin: 30px 0 0; }
+h6 { font-size: 11px; line-height: 1.2; margin: 15px 0 5px }
+  h6.edu { margin: 10px 0 5px; }
+
+p { margin: 5px 0 15px }
+    .intro p {
+      font: normal 16px/1.5 Arial,Helvetica,sans-serif;
+     letter-spacing: 1px;
+     overflow: hidden; }
+  p.caption { font: italic 11px/1.3 Arial,Helvetica,sans-serif; margin-bottom: 25px }
+  p.readmore {
+     background: url(img/icon_sprite.png) no-repeat -10px -195px;
+     float: right;
+     font: italic 12px/1.5 Georgia,"Times New Roman",Times,serif;
+     padding: 0 3px 0 20px }
+      p.readmore a:active { left: 3px; position: relative }
+    p.large { font-size: 16px; line-height: 1.5; letter-spacing: 1px; margin: 15px 0; }
+
+a { color: #3b6ca1;text-decoration: none }
+  a:hover { color: #f47321 }
+
+ol { padding: 0 0 5px 25px }
+  ol li { margin: 5px 0; }
+  ol.subPubList { padding-left: 30px; }
+ul { list-style-type: circle; padding: 0 0 5px 15px }
+  .index_col ul, #sidebar ul li { margin-bottom: 10px; padding-left: 0 }
+
+li { margin: 2px 0 }
+  li.arrow {
+     background: url(img/icon_sprite.png) no-repeat -10px -154px;
+     list-style-type: none;
+     margin-bottom: 5px;
+     padding-left: 24px }
+
+span.lowercase { text-transform: lowercase; }
+span.source { font: bold 10px/1.5 Arial, Helvetica, sans-serif;  text-transform: uppercase; }
+span.support {
+  color: #2b4e77;
+  font: italic 11px/1.5 Arial, Helvetica, sans-serif;
+                                                                                         
+                                                                                         
+  margin-left: 10px; }
+/* @end */
+
+/* @group Contact */
+ul.contact { list-style-type: none; margin: 0 0 0 90px; padding: 5px 0 0 }
+  ul.contact li { list-style-type: none; padding-left: 24px; vertical-align: baseline; }
+     li.website { background: url(img/icon_sprite.png) no-repeat -10px -118px; }
+     li.email { background: url(img/icon_sprite.png) no-repeat -10px -82px }
+     li.phone { background: url(img/icon_sprite.png) no-repeat -10px -46px; }
+     li.office { background: url(img/icon_sprite.png) no-repeat -10px -10px; }
+/* @end */
+
+/* @group Specialized Divs */
+.intro { margin-bottom: 30px; overflow: hidden; }
+
+.index_col {
+  background: #ecf1f6;
+  border-top: 2px solid #002a5c;
+  font-size: 11px;
+  height: 440px;
+  margin: 3px 0 0;
+  overflow: hidden;
+  padding: 15px; }
+
+  .index_col img { border: 2px solid #aab8c9; float: left; padding: 0; }
+
+.edu { margin-bottom: 20px; }
+/* @end */
+
+/* @group Sidebar */
+#sidebar { background: #e4e8ee; border-top: 2px solid #002a5c; font-size: 11px; padding: 15px; }
+  #sidebar img { border-bottom: none }
+  #sidebar p.caption {
+     background: #fff;
+     border-top:none;
+     border-right: 1px solid #aab8c9;
+     border-bottom: 1px solid #aab8c9;
+     border-left: 1px solid #aab8c9;
+     margin-top: 0;
+     padding: 3px;
+     text-align: center }
+     #sidebar h2 {
+         font-size: 14px;
+     }
+/* @end */
+                                                                                         
+                                                                                         
+
+/* @group Footer */
+#footer {
+     margin-bottom: 10px;
+     border-bottom: 4px double #9b9b9b9b;
+     color: #111111;
+     font-size: 18px;
+  background: #002a5c;
+  clear: both;
+  color: #aab8c9;
+  font-size: 11px;
+  height: 95px;
+  line-height: 2;
+  margin-top: -95px;
+  position: relative;
+  width: 100% }
+
+.copyright { padding: 5px 0 0; overflow: hidden; }
+  .copyright p { margin: 0; white-space: pre; }
+
+.links { border-bottom: 1px solid #aab8c9; margin: 20px 0 0; padding: 0 0 5px 0; width: 100%;}
+  .links ul { overflow: hidden; padding: 0; }
+     .links li {
+       float: left;
+       list-style-type: none;
+       margin: 0;
+       padding-right: 50px; }
+
+  #footer a { color: #aab8c9 }
+     #footer a:hover { color: #f47321; }
+/* @end */
+
+
+/* @group Progressive Elements */
+/*%a[href$='.docx']:after,a[href$='.doc']:after { content: url(images/doc.png);margin-left: 3px }*/
+/*%a[href$='.pdf']:after { content: url(images/pdf.png);margin-left: 3px }*/
+/* @end */
+
+
+
