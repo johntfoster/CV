@@ -7,7 +7,7 @@ cd /Users/fes788/Documents/LaTeX/CV
 make
 make html
 
-scp cv_html.html root@idl.utsa.edu:/Library/WebServer/Documents/wp-content/cv.html
+scp cv.html root@idl.utsa.edu:/Library/WebServer/Documents/wp-content/cv.html
 scp cv.pdf root@idl.utsa.edu:/Library/WebServer/Documents/wp-content/cv.pdf
 
 ssh root@idl.utsa.edu 'chown _www /Library/WebServer/Documents/wp-content/cv.pdf'

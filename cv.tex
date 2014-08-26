@@ -1,4 +1,4 @@
-% Jason R. Blevins - Curriculum Vitae
+% R. Blevins - Curriculum Vitae
 %
 % Copyright (C) 2004-2011 Jason R. Blevins
 %
@@ -14,7 +14,6 @@
 \let\saved@bibitem\@bibitem % < -- save to prevent problems due to the command getting redefined...
 \makeatother
 
-%\usepackage[html]{tex4ht}
 \usepackage{bibentry}
 \usepackage[breaklinks]{hyperref}
 \usepackage{geometry}
@@ -24,8 +23,10 @@
 \definecolor{gray}{rgb}{0.4,0.4,0.4}
 
 % Fonts
+%\usepackage[urw-garamond]{mathdesign}
 \usepackage[T1]{fontenc}
-\usepackage[urw-garamond]{mathdesign}
+
+\def\HCode#1{}
 
 % Set your name here
 \def\name{John T. Foster}
@@ -90,36 +91,36 @@
 \endgroup
 
 % Place name at left
-%\HCode{<div class="row">}
-%\HCode{<div class="column grid_8">}
-%\HCode{<h1>}
+\HCode{<div style="margin: 0 auto; overflow: hidden; width: 960px;">} %row
+\HCode{<div style="display: inline; float: left; margin: 0 10px; overflow: hidden; width: 620px">} %column
+\HCode{<h1>}
 {\huge \name}
-%\HCode{</h1>}
+\HCode{</h1>}
 
 % Alternatively, print name centered and bold:
 %\centerline{\huge \bf \name}
 
 \bigskip
 
-%\HCode{<div class="row">}
-%\HCode{<div class="column grid_3">}
+\HCode{<div style="margin: 0 auto; overflow: hidden; width: 960px;">} %row
+\HCode{<div style="display: inline; float: left; margin: 0 10px; overflow: hidden; width: 220px">} %column
 \begin{minipage}[t]{0.5\textwidth}
   Petroleum \& Geosystems Engineering \\
   The University of Texas at Austin \\
   200 E. Dean Keeton, Stop C0300 \\
   Austin, TX 78712-1585
 \end{minipage}
-%\HCode{</div>}
-%\HCode{<div class="column grid_3">}
+\HCode{</div>} %end column
+\HCode{<div style="display: inline; float: left; margin: 0 10px; overflow: hidden; width: 220px">} %column
 \begin{minipage}[t]{0.5\textwidth}
   Phone: (512) 471-6972 \\
   Fax: (512) 471-9605 \\
   Office: CPE 3.108 \\
-  Email: \href{mailto:jfoster@austin.utexas.edu}{jfoster@austin.utexas.edu} \\
+  Email: \href{mailto:jfoster@austin.utexas.edu}{jfoster@austin.utexas.edu}
   %Homepage: \href{http://idl.utsa.edu/}{http://idl.utsa.edu/}
 \end{minipage}
-%\HCode{</div>}
-%\HCode{</div>}
+\HCode{</div>} %end column
+\HCode{</div>} %end row
 
 \section*{Education}
 
@@ -173,17 +174,17 @@
 
 \vfill 
 % Footer
-%\HCode{<center>}
+\HCode{<center>}
 \begin{center}
   \begin{small}
     Last updated: \today\ at \currenttime
   \end{small}
 \end{center}
-%\HCode{</center>}
+\HCode{</center>}
 
 \bibliographystyle{plainurl}
 
-%\HCode{</div>}
-%\HCode{</div>}
+\HCode{</div>}
+\HCode{</div>}
 
 \end{document}
