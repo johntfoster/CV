@@ -1,0 +1,11 @@
+language: python
+python:
+- '2.7'
+install:
+- sudo apt-get update
+- sudo apt-get install texlive
+script: latexmk -pdf cv.tex
+#after_success: .utilities/travis_deploy.sh
+env:
+  global:
+    secure: L50Xh5+EjNFQjWbRRksOR4cytok0NQJVxuzpJLaTcrwbPpJHYsFxFMfYWw0x6pK7LnKKGPw3YHzKLH4i9JeIYAtQi649KJqRBrRdFNSnAmazFzJ85tih+swun1WmdMpUvDT/ZjUluVEXzf3XWuat3bJkLlv+IoDClYBPrX+gk0c=
