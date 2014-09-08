@@ -3,7 +3,7 @@ python:
 - '2.7'
 install:
 - sudo apt-get update
-- sudo apt-get install texlive latexmk
+- sudo apt-get install texlive-full
 script: latexmk -pdf cv.tex
 #after_success: .utilities/travis_deploy.sh
 env:
