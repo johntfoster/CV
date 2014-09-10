@@ -2,11 +2,9 @@ language: python
 python:
 - '2.7'
 install:
-- git clone https://github.com/scottkosty/install-tl-ubuntu.git $HOME/texlive-install
-- cd $HOME/texlive-install
-- sudo ./install-tl-ubuntu
+- sudo apt-get update
+- sudo apt-get install texlive latexmk
 script: latexmk -pdfps cv.tex
-#after_success: .utilities/travis_deploy.sh
 env:
   global:
-    secure: L50Xh5+EjNFQjWbRRksOR4cytok0NQJVxuzpJLaTcrwbPpJHYsFxFMfYWw0x6pK7LnKKGPw3YHzKLH4i9JeIYAtQi649KJqRBrRdFNSnAmazFzJ85tih+swun1WmdMpUvDT/ZjUluVEXzf3XWuat3bJkLlv+IoDClYBPrX+gk0c=
+    secure: ioSWVPvDm6cDtkaAWZJRpHLSd1JoJnIhOwtxdQwJKpLxio6GwL64RCzljla2FtC45mx05YX8kNwtr1IRHvuA0ii9+00r9Y8L/sunt+VmefCa/V9ATfYVz9YFaE4ne4dUtzPH5blz8w/y7ad8DkM0xvwrX9WU9UlzgCiUpQsluKc=
