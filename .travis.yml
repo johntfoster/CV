@@ -1,7 +1,10 @@
 language: ruby
 install:
+- sudo add-apt-repository ppa:texlive-backports/ppa
+- sudo apt-get update
+- sudo apt-get install texlive-full latexmk
 - gem install travis
-script: echo "Restarting Travis CI on johntfoster/johntfoster-professional-website"
+script: latexmk -pdfps cv.tex
 after_success: travis restart -r johntfoster/johntfoster-professional-website --token ${TRAVIS_TOKEN} --skip-completion-check
 env:
   global:
