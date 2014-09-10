@@ -4,6 +4,8 @@ install:
 - sudo apt-get update -y
 - sudo apt-get install texlive-full latexmk -y
 - gem install travis
+- wget http://tug.org/fonts/getnonfreefonts/install-getnonfreefonts
+- ./install-getnonfreefonts --help
 script: latexmk -pdfps cv.tex
 after_success: travis restart -r johntfoster/johntfoster-professional-website --token ${TRAVIS_TOKEN} --skip-completion-check
 env:
