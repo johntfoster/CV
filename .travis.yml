@@ -5,7 +5,8 @@ install:
 - sudo apt-get install texlive-latex-extra texlive-luatex latexmk 
 - gem install travis
 - wget http://tug.org/fonts/getnonfreefonts/install-getnonfreefonts
-- sudo texlua install-getnonfreefonts --help
+- sudo texlua install-getnonfreefonts
+- sudo getnonfreefonts-sys garamond
 script: latexmk -pdfps cv.tex
 after_success: travis restart -r johntfoster/johntfoster-professional-website --token ${TRAVIS_TOKEN} --skip-completion-check
 env:
