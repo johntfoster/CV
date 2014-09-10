@@ -2,7 +2,7 @@ language: ruby
 install:
 - gem install travis
 script: echo "Restarting Travis CI on johntfoster/johntfoster-professional-website"
-after_success: travis restart -r johntfoster/johntfoster-professional-website --token ${TRAVIS_TOKEN}
+after_success: travis restart -r johntfoster/johntfoster-professional-website --token ${TRAVIS_TOKEN} --skip-completion-check
 env:
   global:
     secure: lxveO72K7h378et9SZFcY7LFMSQwEODcHlw+3MH0td4gV9UP5V7ysO1n1Mc9dtH1qa0ufrRFEYh0LemR3gcScaGgiFyk/wzRfokuFNtmc5QQcEMrgKAvcNFaHGhUQB772mvJ888Pln34sBZ1M65MBuOteDXxR1V6P2hGocNAfPo=
