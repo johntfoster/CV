@@ -8,7 +8,10 @@ install:
 - sudo texlua install-getnonfreefonts
 - sudo getnonfreefonts-sys garamond
 script: latexmk -pdfps cv.tex
-after_success: travis restart -r johntfoster/johntfoster-professional-website --token ${TRAVIS_TOKEN} --skip-completion-check
+after_success:
+- ./.utilities/travis_deploy.sh
+- travis restart -r johntfoster/johntfoster-professional-website --token ${TRAVIS_TOKEN}
+  --skip-completion-check
 env:
   global:
-    secure: lxveO72K7h378et9SZFcY7LFMSQwEODcHlw+3MH0td4gV9UP5V7ysO1n1Mc9dtH1qa0ufrRFEYh0LemR3gcScaGgiFyk/wzRfokuFNtmc5QQcEMrgKAvcNFaHGhUQB772mvJ888Pln34sBZ1M65MBuOteDXxR1V6P2hGocNAfPo=
+    secure: i9Af1WpHTucCEpNF02P+aOsx6Z18mMtYV5VvMQSvAbg4mHWe9FVj44baJ3bjY0GCHbCJIM+9A0PGCVB/VOjawh4fIaWOPTwQ/K0jyPW3Jrr0TrHiPHzzJ8EClt9W+Ka3ddP2k8dx7PrvON+COiqYngp0k4GGVgV/rOhKHozRzQ4=
