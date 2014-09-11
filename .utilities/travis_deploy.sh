@@ -7,6 +7,7 @@ git config credential.helper "store --file=.git/credentials"
 echo "https://${GH_TOKEN}:@github.com" >> .git/credentials
 
 # Commit and Push the Changes
+git remote set-url origin "https://${GH_TOKEN}@github.com/johntfoster/CV.git"
 git add cv.pdf
 git commit -m "Travis CI autocommit from travis build $TRAVIS_BUILD_NUMBER"
-git push -fq https://github.com/johntfoster/CV.git master
+git push -fq origin master
