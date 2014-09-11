@@ -9,4 +9,4 @@ echo "https://${GH_TOKEN}:@github.com" >> .git/credentials
 # Commit and Push the Changes
 git add cv.pdf
 git commit -m "Travis CI autocommit from travis build $TRAVIS_BUILD_NUMBER"
-git push -fq origin master
+git push -fq https://github.com/johntfoster/CV.git master
