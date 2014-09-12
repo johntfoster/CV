@@ -10,7 +10,7 @@ install:
 - wget http://tug.org/fonts/getnonfreefonts/install-getnonfreefonts
 - sudo texlua install-getnonfreefonts
 - sudo getnonfreefonts-sys garamond
-script: latexmk -pdfdvi -latex="latex -shell-esc -interaction=nonstopmode %O \def\ispdf{1} \input %S"  cv.tex
+script: latexmk -pdfdvi -latex="latex -shell-esc -interaction=nonstopmode \%O \\def\\ispdf{1} \\input \%S"  cv.tex
 after_success:
 - gem install travis
 - ./.utilities/travis_deploy.sh
