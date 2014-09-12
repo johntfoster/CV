@@ -7,7 +7,7 @@ install:
 - wget http://tug.org/fonts/getnonfreefonts/install-getnonfreefonts
 - sudo texlua install-getnonfreefonts
 - sudo getnonfreefonts-sys garamond
-script: latexmk -pdfps -latex=latex -shell-esc -interaction=nonstopmode cv.tex
+script: latexmk -pdfps -latex="latex -shell-esc -interaction=nonstopmode" cv.tex
 after_success:
 - ./.utilities/travis_deploy.sh
 - travis restart -r johntfoster/johntfoster-professional-website --token ${TRAVIS_TOKEN}
