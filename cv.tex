@@ -77,6 +77,16 @@
   \end{list}
 }
 
+%To highlight my own name in the bibliography
+\def\FormatName#1{%
+  \def\myname{J.T. Foster}%
+  \edef\name{#1}%
+  \ifx\name\myname
+    \textbf{#1}%
+  \else
+    #1%
+  \fi
+}
 
 \begin{document}
 \sloppy
@@ -91,14 +101,10 @@
 %\HCode{<div style="margin: 0 auto; overflow: hidden; width: 960px">} %row
 \HCode{<div class="fluid-container"}
 
-\HCode{<div class="row"}
-\HCode{<div class="col-md-8"}
 %\HCode{<div style="display: inline; float: left; margin: 0 10px; overflow: hidden; width: 820px">} %column
 \HCode{<h1>}
 {\huge \name}
 \HCode{</h1>}
-\HCode{</div>} %column
-\HCode{</div>} %row
 
 % Alternatively, print name centered and bold:
 %\centerline{\huge \bf \name}
@@ -188,7 +194,7 @@
 \end{center}
 \HCode{</center>}
 
-\bibliographystyle{plainurl}
+\bibliographystyle{myplainurl}
 
 %\HCode{</div>}
 \HCode{</div>} %fluid-container
