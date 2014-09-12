@@ -12,6 +12,3 @@ after_success:
 - ./.utilities/travis_deploy.sh
 - travis restart -r johntfoster/johntfoster-professional-website --token ${TRAVIS_TOKEN}
   --skip-completion-check
-env:
-  global:
-    secure: oXRSvrZgd+11dz7X8+taCPe/bhiSGmty31hUPrH7hhb2L9LKfs2/hxNlyr4rJqLwwldc1RoidYhtdgVq6cBDECiYgaQsFHwKJv7xmJfFcnAthPR+EExT0PtExRlKUCRzaQ6TrIxjnQxJoY+UwlqaqTBsMVN7W2ot5A9CftZXDhM=
