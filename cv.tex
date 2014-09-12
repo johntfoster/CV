@@ -1,19 +1,17 @@
+%
 % John T. Foster - Curriculum Vitae
 %
-
 \documentclass[12pt,letterpaper]{article}
 
 \makeatletter
 \let\saved@bibitem\@bibitem % < -- save to prevent problems due to the command getting redefined...
 \makeatother
 
+\usepackage[usenames,dvipsnames]{color}
 \usepackage{bibentry}
 \usepackage[breaklinks]{hyperref}
 \usepackage{geometry}
 \usepackage[yyyymmdd,hhmmss]{datetime}
-
-\usepackage{color}
-\definecolor{gray}{rgb}{0.4,0.4,0.4}
 
 % Fonts
 \ifdefined\ispdf
@@ -31,9 +29,9 @@
 % The following metadata will show up in the PDF properties
 \hypersetup{
   colorlinks = true,
-  urlcolor = blue,
+  urlcolor = gray,
   pdfauthor = {\name},
-  pdfkeywords = {mechanical engineering, peridynamics, Kolsky bar, split-Hopkinson bar, high strain rate},
+  pdfkeywords = {petroleum engineering, peridynamics, hydralic fracturing},
   pdftitle = {\name: Curriculum Vitae},
   pdfsubject = {Curriculum Vitae},
   pdfpagemode = UseNone
@@ -79,13 +77,13 @@
 
 %To highlight my own name in the bibliography
 \def\FormatName#1{%
-  \def\myname{J.T. Foster}%
-  \edef\name{#1}%
-  \ifx\name\myname
-    \textbf{#1}%
-  \else
-    #1%
-  \fi
+    \def\myname{J.T. Foster}%
+    \edef\name{#1}%
+    \ifx\name\myname
+      \textbf{#1}%
+    \else
+      #1%
+    \fi
 }
 
 \begin{document}
@@ -106,8 +104,6 @@
 {\huge \name}
 \HCode{</h1>}
 
-% Alternatively, print name centered and bold:
-%\centerline{\huge \bf \name}
 
 \bigskip
 
@@ -134,41 +130,51 @@
 \HCode{</div>} %end column
 \HCode{</div>} %end row
 
+\HCode{<div class="row"}
+\HCode{<div class="col-md-8"}
 \section*{Education}
 
 \begin{itemize}
-  \item Ph.D., Purdue University, 2009.
-  %\item Ph.D. Aeronautics \& Astronautics, Purdue University, 2009.
+    \item Ph.D., Purdue University, 2009.
+    %\item Ph.D. Aeronautics \& Astronautics, Purdue University, 2009.
     % Received Dec 19, 2009
     %\begin{itemize}
     %\item \textit{Dissertation:}
-      %Dynamic Crack Initiation Toughness: Experiments and Peridynamic Modeling.
+    %Dynamic Crack Initiation Toughness: Experiments and Peridynamic Modeling.
     %\end{itemize}
-  \item M.S. Mechanical Engineering, Texas Tech University, 2004.
+    \item M.S. Mechanical Engineering, Texas Tech University, 2004.
     % Received Dec. 18, 2004
-  \item B.S. Mechanical Engineering, \textit{Cum Laude},
-   Texas Tech University, 2002.
+    \item B.S. Mechanical Engineering, \textit{Cum Laude},
+    Texas Tech University, 2002.
     % Received Dec. 14, 2002
 \end{itemize}
 
 \section*{Professional Appointments}
 
 \begin{itemize}
-    \item Assistant Professor, Department of Petroleum and Geosystems Engineering, \\ The University of Texas at Austin,\\
-  August 2014--Present. 
-\item Assistant Professor, Department of Mechanical Engineering, \\ The University of Texas at San Antonio,\\
-  August 2011--August 2014. 
+    \item Assistant Professor, Department of Petroleum and Geosystems Engineering, \\ 
+          The University of Texas at Austin, \\
+          August 2014--Present. 
 
+    \item Assistant Professor, Department of Mechanical Engineering, \\ 
+          The University of Texas at San Antonio,\\
+          August 2011--August 2014. 
 
-\item Senior Member of the Technical Staff, Terminal Ballistics Technology Department, \\ Sandia National Laboratories, Albuquerque, NM, \\ January 2006--August 2011.
+    \item Senior Member of the Technical Staff, Terminal Ballistics Technology Department, \\ 
+          Sandia National Laboratories, Albuquerque, NM, \\ 
+          January 2006--August 2011.
 
-\item Member of the Technical Staff, Terminal Ballistics Technology Department, \\ Sandia National Laboratories, Albuquerque, NM, \\ August 2004--January 2006.
+    \item Member of the Technical Staff, Terminal Ballistics Technology Department, \\ 
+          Sandia National Laboratories, Albuquerque, NM, \\ 
+          August 2004--January 2006.
 \end{itemize}
 
 \section*{Awards \& Honors}
+
 \begin{itemize}
-\item 2013 Air Force Office of Scientific Research Young Investigator Award
-\item 2013 `40 Under 40' - San Antonio Business Journal
+    \item 2013 Air Force Office of Scientific Research Young Investigator Award
+
+    \item 2013 `40 Under 40' - San Antonio Business Journal
 \end{itemize}
 
 \input{sections/journal_papers}
@@ -188,15 +194,17 @@
 % Footer
 \HCode{<center>}
 \begin{center}
-  \begin{small}
-    Last updated: \today\ at \currenttime
-  \end{small}
+    \begin{small}
+        Last updated: \today\ at \currenttime
+    \end{small}
 \end{center}
 \HCode{</center>}
 
 \bibliographystyle{myplainurl}
 
 %\HCode{</div>}
+\HCode{</div>} %column
+\HCode{</div>} %row
 \HCode{</div>} %fluid-container
 
 \end{document}
