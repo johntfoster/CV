@@ -14,4 +14,4 @@ after_success:
   --skip-completion-check
 env:
   global:
-    secure: i9Af1WpHTucCEpNF02P+aOsx6Z18mMtYV5VvMQSvAbg4mHWe9FVj44baJ3bjY0GCHbCJIM+9A0PGCVB/VOjawh4fIaWOPTwQ/K0jyPW3Jrr0TrHiPHzzJ8EClt9W+Ka3ddP2k8dx7PrvON+COiqYngp0k4GGVgV/rOhKHozRzQ4=
+    secure: oXRSvrZgd+11dz7X8+taCPe/bhiSGmty31hUPrH7hhb2L9LKfs2/hxNlyr4rJqLwwldc1RoidYhtdgVq6cBDECiYgaQsFHwKJv7xmJfFcnAthPR+EExT0PtExRlKUCRzaQ6TrIxjnQxJoY+UwlqaqTBsMVN7W2ot5A9CftZXDhM=
