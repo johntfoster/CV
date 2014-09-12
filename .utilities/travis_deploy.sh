@@ -10,5 +10,5 @@ echo "https://${GH_TOKEN}:@github.com" >> .git/credentials
 git checkout master
 git remote set-url origin "https://${GH_TOKEN}@github.com/johntfoster/CV.git"
 git add cv.pdf
-git commit -m "Travis CI autocommit from travis build $TRAVIS_BUILD_NUMBER"
+git commit -m "Travis CI autocommit from travis build $TRAVIS_BUILD_NUMBER [skip ci]"
 git push -fq origin master
