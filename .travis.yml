@@ -13,7 +13,7 @@ install:
 - sudo getnonfreefonts-sys garamond
 script: 
 - latexmk -pdfdvi -latex='latex -shell-esc -interaction=nonstopmode %O \\def\\ispdf{1} \\input %S'  cv.tex
-- htlatex -e/etc/tex4ht/tex4ht.env cv.tex "myfonts, -css, NoFonts"
+- htlatex -e/usr/share/texmf/tex4ht/tex4ht.env cv.tex "myfonts, -css, NoFonts"
 - ls
 after_success:
 - gem install travis
