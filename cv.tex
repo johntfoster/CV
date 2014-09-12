@@ -16,8 +16,12 @@
 \definecolor{gray}{rgb}{0.4,0.4,0.4}
 
 % Fonts
-\usepackage[urw-garamond]{mathdesign}
-\usepackage[T1]{fontenc}
+\ifdefined\ispdf
+    \usepackage[urw-garamond]{mathdesign}
+    \usepackage[T1]{fontenc}
+\else
+    \usepackage[T1]{fontenc}
+\fi
 
 \def\HCode#1{}
 
@@ -106,7 +110,7 @@
   Austin, TX 78712-1585
 \end{minipage}
 \HCode{</div>} %end column
-\HCode{<div class="col-md-4"}
+\HCode{<div class="col-md-6"}
 %\HCode{<div style="display: inline; float: left; margin: 0 10px; overflow: hidden; width: 320px">} %column
 \begin{minipage}[t]{0.5\textwidth}
   Phone: (512) 471-6972 \\
