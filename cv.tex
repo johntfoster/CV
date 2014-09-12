@@ -88,11 +88,17 @@
 \endgroup
 
 % Place name at left
-\HCode{<div style="margin: 0 auto; overflow: hidden; width: 960px">} %row
-\HCode{<div style="display: inline; float: left; margin: 0 10px; overflow: hidden; width: 820px">} %column
+%\HCode{<div style="margin: 0 auto; overflow: hidden; width: 960px">} %row
+\HCode{<div class="fluid-container"}
+
+\HCode{<div class="row"}
+\HCode{<div class="col-md-8"}
+%\HCode{<div style="display: inline; float: left; margin: 0 10px; overflow: hidden; width: 820px">} %column
 \HCode{<h1>}
 {\huge \name}
 \HCode{</h1>}
+\HCode{</div>} %column
+\HCode{</div>} %row
 
 % Alternatively, print name centered and bold:
 %\centerline{\huge \bf \name}
@@ -184,7 +190,7 @@
 
 \bibliographystyle{plainurl}
 
-\HCode{</div>}
-\HCode{</div>}
+%\HCode{</div>}
+\HCode{</div>} %fluid-container
 
 \end{document}
