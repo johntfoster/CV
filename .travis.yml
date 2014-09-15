@@ -4,7 +4,7 @@ install:
 - sudo apt-get update -y
 - sudo apt-get install texlive-latex-extra -y 
 - sudo apt-get install texlive-luatex -y
-- sudo apt-get install texlive-fonts -y
+- sudo apt-get install texlive-fonts-recommended -y
 - sudo apt-get install texlive-fonts-extra -y
 - sudo apt-get install texlive-bibtex-extra -y
 - sudo apt-get install latexmk -y
