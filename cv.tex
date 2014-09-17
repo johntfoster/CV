@@ -7,11 +7,12 @@
 \let\saved@bibitem\@bibitem % < -- save to prevent problems due to the command getting redefined...
 \makeatother
 
-\usepackage[usenames,dvipsnames]{color}
+\usepackage[usenames,dvipsnames]{xcolor}
 \usepackage{bibentry}
-\usepackage[breaklinks,dvips]{hyperref}
+\PassOptionsToPackage{hyphens}{url}\usepackage[dvips]{hyperref}
 \usepackage{geometry}
 \usepackage[yyyymmdd,hhmmss]{datetime}
+\urlstyle{same}
 
 % Fonts
 \ifdefined\ispdf
@@ -29,14 +30,14 @@
 % The following metadata will show up in the PDF properties
 \hypersetup{
   colorlinks = true,
-  urlcolor = black,
+  urlcolor = gray,
   pdfauthor = {\name},
   pdfkeywords = {petroleum engineering, peridynamics, hydralic fracturing},
   pdftitle = {\name: Curriculum Vitae},
   pdfsubject = {Curriculum Vitae},
   pdfpagemode = UseNone
 }
-\urlstyle{same}
+
 
 \geometry{
   body={6.5in, 9.0in},
