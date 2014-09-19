@@ -12,5 +12,5 @@ cd travis-build
 cp -f $HOME/build/johntfoster/CV/cv.pdf .
 cp -f $HOME/build/johntfoster/CV/cv.html .
 git add cv.pdf cv.html
-git commit -m "Travis CI autocommit from travis build $TRAVIS_BUILD_NUMBER [ci skip]"
+git commit -m "Travis CI autocommit from travis build $TRAVIS_BUILD_NUMBER"
 git push -fq origin travis-build > /dev/null
