@@ -12,4 +12,4 @@ git remote set-url origin "https://${GH_TOKEN}@github.com/johntfoster/CV.git"
 git add cv.pdf 
 git add cv.html
 git commit -m "Travis CI autocommit from travis build $TRAVIS_BUILD_NUMBER [ci skip]"
-git push -fq origin master
+git push -fq origin travis-build
