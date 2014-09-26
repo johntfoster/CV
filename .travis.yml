@@ -16,8 +16,10 @@ install:
     - sudo texlua install-getnonfreefonts
     - sudo getnonfreefonts-sys garamond
 script: 
-    - latexmk -pdfps -latex='latex -shell-esc -interaction=nonstopmode %O \\def\\ispdf{1} \\input %S'  cv.tex
-    - htlatex cv.tex "myfonts, -css, NoFonts"
+    - latexmk
+    - latexmk -pdf
+    #- latexmk -pdfps -latex='latex -shell-esc -interaction=nonstopmode %O \\def\\ispdf{1} \\input %S'  cv.tex
+    #- htlatex cv.tex "myfonts, -css, NoFonts"
 after_success:
     - git config --global user.email ${GIT_EMAIL}
     - git config --global user.name ${GIT_NAME}
