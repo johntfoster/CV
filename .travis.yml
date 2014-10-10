@@ -30,7 +30,6 @@ after_success:
     - git add cv.pdf cv.html
     - git commit -m "Travis CI autocommit from travis build ${TRAVIS_BUILD_NUMBER}"
     - git push -fq origin travis-build > /dev/null
-    - ./.utilities/travis_deploy.sh
     - gem install travis
     - travis restart -r johntfoster/johntfoster-professional-website --token ${TRAVIS_TOKEN} --skip-completion-check
 
