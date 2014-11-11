@@ -29,6 +29,6 @@ after_success:
     - git commit -m "Travis CI autocommit from travis build ${TRAVIS_BUILD_NUMBER}"
     - git push -fq origin travis-build > /dev/null
     - gem install travis
-    - travis restart -r johntfoster/johntfoster-professional-website --token ${TRAVIS_TOKEN} --skip-completion-check
+    - travis restart -r johnfoster-pge-utexas/johnfoster-pge-utexas.github.io --token ${TRAVIS_TOKEN} --skip-completion-check
 
 
