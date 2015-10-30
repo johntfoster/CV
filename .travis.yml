@@ -1,4 +1,4 @@
-sudo: false
+#sudo: false
 language: ruby
 branches:
     only:
