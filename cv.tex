@@ -3,6 +3,29 @@
 %
 \documentclass[12pt,letterpaper]{article}
 
+%Setup automating totaling for itemize and enumerate
+\usepackage{etoolbox,refcount}
+\newcounter{countitems}
+\newcounter{nextitemizecount}
+\newcommand{\setupcountitems}{%
+  \stepcounter{nextitemizecount}%
+  \setcounter{countitems}{0}%
+  \preto\item{\stepcounter{countitems}}%
+}
+\makeatletter
+\newcommand{\computecountitems}{%
+  \edef\@currentlabel{\number\c@countitems}%
+  \label{countitems@\number\numexpr\value{nextitemizecount}-1\relax}%
+}
+\newcommand{\nextitemizecount}{%
+  \getrefnumber{countitems@\number\c@nextitemizecount}%
+}
+\makeatother
+\AtBeginEnvironment{itemize}{\setupcountitems}
+\AtEndEnvironment{itemize}{\computecountitems}
+\AtBeginEnvironment{enumerate}{\setupcountitems}
+\AtEndEnvironment{enumerate}{\computecountitems}
+
 \makeatletter
 \let\saved@bibitem\@bibitem % < -- save to prevent problems due to the command getting redefined...
 \makeatother
@@ -33,7 +56,7 @@
   colorlinks = true,
   urlcolor = gray,
   pdfauthor = {\name},
-  pdfkeywords = {petroleum engineering, peridynamics, hydralic fracturing},
+  pdfkeywords = {petroleum engineering, peridynamics, hydraulic fracturing},
   pdftitle = {\name: Curriculum Vitae},
   pdfsubject = {Curriculum Vitae},
   pdfpagemode = UseNone
@@ -77,6 +100,35 @@
 }{
   \end{list}
 }
+
+
+%To underline students names in bibliography
+\usepackage{xparse,l3regex}
+\ExplSyntaxOn
+\regex_new:N \g_hl_students_regex
+\seq_new:N \l_hl_students_seq
+\tl_new:N \l_hl_data_tl
+\NewDocumentCommand{\studentslist}{m}
+ {
+  \seq_set_split:Nnn \l_hl_students_seq { , } { #1 }
+  \regex_gset:Nx \g_hl_students_regex
+   { ( \seq_use:Nnnn \l_hl_students_seq { | } { | } { | } ) }
+ }
+\cs_generate_variant:Nn \regex_gset:Nn { Nx }
+
+\cs_set_eq:NN \hl_bibitem:w \bibitem
+\cs_set:Npn \bibitem #1#2\par
+ {
+  \hl_bibitem:w { #1 }
+  \tl_set:Nn \l_hl_data_tl { #2 }
+  \regex_replace_all:NnN \g_hl_students_regex { \c{underline}\cB\{ \1 \cE\} } \l_hl_data_tl
+  \tl_use:N \l_hl_data_tl \par
+ }
+\ExplSyntaxOff
+
+
+\studentslist{J.R.\ York, J.T.\ O'Grady, R.~Rahman, P.E.\ Briseno, E.A.\ Lynd, M.D.\ Brothers}
+
 
 %To highlight my own name in the bibliography
 \def\FormatName#1{%
@@ -127,7 +179,7 @@
   Fax: (512) 471-9605 \\
   Office: CPE 3.108 \\
 \ifdefined\ispdf
-  Email: \href{mailto:jfoster@austin.utexas.edu}{jfoster.austin.utexas.edu} \\
+  Email: \href{mailto:jfoster@austin.utexas.edu}{jfoster@austin.utexas.edu} \\
 \fi
   Homepage: \href{http://johnfoster.pge.utexas.edu/}{http://johnfoster.pge.utexas.edu/}
 \end{minipage}
@@ -153,6 +205,12 @@
     % Received Dec. 14, 2002
 \end{itemize}
 
+\section*{Professional Registration}
+
+\begin{itemize}
+    \item Professional Engineer, Texas, \#118233
+\end{itemize}
+
 
 \ifdefined\ispdf
 \section*{Professional Appointments}
@@ -162,7 +220,7 @@
           The University of Texas at Austin, \\
           August 2014--Present. 
 
-      \item Assistant Professor (by courtesy), Department of Aerospace Engineering \\ 
+    \item Assistant Professor (by courtesy), Department of Aerospace Engineering \\ 
           and Engineering Mechanics, \\ 
           The University of Texas at Austin, \\
           January 2014--Present. 
@@ -175,9 +233,9 @@
           The University of Texas at San Antonio,\\
           August 2011--August 2014. 
 
-    %\item Adjunct Associate Professor, Department of Mechanical Engineering \\
-          %The University of New Mexico, \\ 
-          %September 2010--May 2011.
+    \item Adjunct Associate Professor, Department of Mechanical Engineering \\
+          The University of New Mexico, \\ 
+          September 2010--May 2011.
 
     \item Senior Member of the Technical Staff, Terminal Ballistics Technology Department, \\ 
           Sandia National Laboratories \\
@@ -214,11 +272,16 @@
 \end{itemize}
 
 
-\section*{Professional Registration}
+\section*{Consulting}
 
 \begin{itemize}
-    \item Professional Engineer, Texas, \#118233
+    \item Curl, Stahl, Geis \\
+          November 2014 -- February 2015
+    \begin{itemize}
+        \item Engineering analysis and expert witness testimony at trial
+    \end{itemize}
 \end{itemize}
+
 
 \HCode{<a name="journalpapers"></a>}
 \input{sections/journal_papers}
@@ -226,6 +289,7 @@
 \input{sections/conf_proceedings}
 \input{sections/tech_reports}
 \input{sections/oral_presentations}
+\input{sections/software}
 \input{sections/grants}
 \input{sections/courses}
 \input{sections/students}
@@ -233,6 +297,13 @@
 \input{sections/other}
 %\newpage
 %\input{sections/references}
+
+\ifdefined\ispdf
+\newpage
+\section*{Vita}
+John T. Foster is an assistant professor in the Departments of Petroleum and Geosystems Engineering and Aerospace Engineering and Engineering Mechanics (by courtesy) at the University of Texas at Austin. He received his BS and MS in mechanical engineering from Texas Tech University and PhD from Purdue University. He is a registered Professional Engineer in the State of Texas. During his career in research he has been involved in many projects ranging from full scale projectile penetration field tests, to laboratory experiments using Kolsky bars, to modeling and simulation efforts using some of the world's largest computers. His research interests are in experimental and computational mechanics and multi-scale modeling with applications to geomechanics, impact mechanics, fracture mechanics, and anamolous transport processes. Additionally, he has interest in fundamental theoretical advancement of the peridynamic theory of solid mechanics. His teaching interests are in all areas of theoretical and computational mechanics.
+\else
+\fi
 
 \vfill 
 % Footer
@@ -245,6 +316,7 @@
 \HCode{</center>}
 
 \bibliographystyle{myplainurl}
+%\bibliographystyle{plainurl}
 
 \HCode{</div>} %column
 \HCode{</div>} %row
