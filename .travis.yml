@@ -34,7 +34,7 @@ install:
     #- getnonfreefonts garamond
 script: 
     - latexmk
-    - latexmk -pdf
+    - latexmk -pdf -f
 after_success:
     - git config --global user.email ${GIT_EMAIL}
     - git config --global user.name ${GIT_NAME}
