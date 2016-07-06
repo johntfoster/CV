@@ -4,7 +4,7 @@ language: ruby
 branches:
     only:
         - master
-before install:
+install:
     - brew update
     - brew cask install mactex
     - wget http://tug.org/fonts/getnonfreefonts/install-getnonfreefonts
