@@ -33,6 +33,8 @@ install:
     #- texlua install-getnonfreefonts
     #- getnonfreefonts garamond
 script: 
+    - latexmk -latex='latex -shell-esc -interaction=nonstopmode %O \\\def\\\iscockrell{1} \\\input %S' -jobname="cv_cockrell"
+    - latexmk -C
     - latexmk
     - latexmk -pdf -f
 after_success:
@@ -41,8 +43,9 @@ after_success:
     - git clone --quiet --branch=travis-build https://${GH_TOKEN}@github.com/johntfoster/CV travis-build > /dev/null
     - cd travis-build
     - cp -f $HOME/build/johntfoster/CV/cv.pdf .
+    - cp -f $HOME/build/johntfoster/CV/cv_cockrell.pdf .
     - cp -f $HOME/build/johntfoster/CV/cv.html .
-    - git add cv.pdf cv.html
+    - git add cv.pdf cv_cockrell.pdf cv.html
     - git commit -m "Travis CI autocommit from travis build ${TRAVIS_BUILD_NUMBER}"
     - git push -fq origin travis-build > /dev/null
     - gem install travis
