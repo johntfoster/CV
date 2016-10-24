@@ -11,6 +11,8 @@ script:
     - docker run --rm -it -v `pwd`:/var/texlive  johntfoster/texlive latexmk -C
     - docker run --rm -it -v `pwd`:/var/texlive  johntfoster/texlive latexmk cv.tex
     - docker run --rm -it -v `pwd`:/var/texlive  johntfoster/texlive latexmk -pdf cv.tex
+    - docker run --rm -it -v `pwd`:/var/texlive  johntfoster/texlive vi cv.html +"set fileencoding=utf-8" +qall +wq
+    - docker run --rm -it -v `pwd`:/var/texlive  johntfoster/texlive pandoc cv.html -o cv.docx
 after_success:
     - git config --global user.email ${GIT_EMAIL}
     - git config --global user.name ${GIT_NAME}
@@ -19,7 +21,8 @@ after_success:
     - cp -f $HOME/build/johntfoster/CV/cv.pdf .
     - cp -f $HOME/build/johntfoster/CV/cv_cockrell.pdf .
     - cp -f $HOME/build/johntfoster/CV/cv.html .
-    - git add cv.pdf cv_cockrell.pdf cv.html
+    - cp -f $HOME/build/johntfoster/CV/cv.docx.
+    - git add cv.pdf cv_cockrell.pdf cv.html cv.docx
     - git commit -m "Travis CI autocommit from travis build ${TRAVIS_BUILD_NUMBER}"
     - git push -fq origin travis-build > /dev/null
     - gem install travis
