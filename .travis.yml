@@ -21,7 +21,7 @@ after_success:
     - cp -f $HOME/build/johntfoster/CV/cv.pdf .
     - cp -f $HOME/build/johntfoster/CV/cv_cockrell.pdf .
     - cp -f $HOME/build/johntfoster/CV/cv.html .
-    - cp -f $HOME/build/johntfoster/CV/cv.docx.
+    - cp -f $HOME/build/johntfoster/CV/cv.docx .
     - git add cv.pdf cv_cockrell.pdf cv.html cv.docx
     - git commit -m "Travis CI autocommit from travis build ${TRAVIS_BUILD_NUMBER}"
     - git push -fq origin travis-build > /dev/null
