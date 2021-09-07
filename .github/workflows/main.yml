@@ -11,7 +11,7 @@ jobs:
       - name: Run LaTeX 
         shell: bash -l {0}
         run: |
-          sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends vim texlive-latex-extra texlive-latex-recommended texlive-pictures latexmk
+          sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends vim texlive-latex-extra texlive-latex-recommended texlive-fonts-extra texlive-pictures latexmk
           latexmk -latex='latex -shell-esc -interaction=nonstopmode %O \\\def\\\iscockrell{1} \\\input %S' -jobname="cv_cockrell"
           latexmk -C
           latexmk cv.tex
