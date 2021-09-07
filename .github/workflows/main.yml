@@ -1,0 +1,19 @@
+on: push
+jobs:
+  conda:
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: actions/checkout@v2
+      - uses: mamba-org/provision-with-micromamba@main
+        with:
+          environment-file: environment.yml
+      - name: Run LaTeX 
+        shell: bash -l {0}
+        run: |
+          sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends vim texlive-latex-extra texlive-latex-recommended texlive-pictures latexmk
+          latexmk -latex='latex -shell-esc -interaction=nonstopmode %O \\\def\\\iscockrell{1} \\\input %S' -jobname="cv_cockrell"
+          latexmk -C
+          latexmk cv.tex
+          latexmk -pdf cv.tex
+          vi cv.html +"set fileencoding=utf-8" +qall +wq
+          pandoc cv.html -o cv.docx
