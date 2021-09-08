@@ -133,7 +133,8 @@
 
 %To underline students names in bibliography
 \ifdefined\iscockrell
-\usepackage{xparse,l3regex}
+\usepackage{xparse,expl3}
+\expandafter\def\csname ver@l3regex.sty\endcsname{} 
 \ExplSyntaxOn
 \regex_new:N \g_hl_students_regex
 \seq_new:N \l_hl_students_seq
