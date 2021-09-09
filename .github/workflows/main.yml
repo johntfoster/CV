@@ -11,16 +11,6 @@ jobs:
         uses: mamba-org/provision-with-micromamba@main
         with:
           environment-file: environment.yml
-      - name: Build PDF w/ Garamond fonts
-        uses: xu-cheng/latex-action@v2
-        with:
-          root_file: cv.tex
-          args: -latex='latex -shell-esc -interaction=nonstopmode %O \\\def\\\iscockrell{1} \\\input %S' -jobname="cv_cockrell"
-      - name: Clean build
-        uses: xu-cheng/latex-action@v2
-        with:
-          root_file: cv.tex
-          args: -C
       - name: Rebuild
         uses: xu-cheng/latex-action@v2
         with:
