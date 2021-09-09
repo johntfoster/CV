@@ -1,4 +1,5 @@
 $latex = 'latex -shell-esc -interaction=nonstopmode %O \\\def\\\ispdf{1} \\\input %S';
+$pdfxelatex = 'latex -shell-esc -interaction=nonstopmode %O \\\def\\\iscockrell{1} \\\input %S' -jobname="cv_cockrell"
 $pdflatex = 'htlatex %S "myfonts, -css, NoFonts"';
 $pdf_mode = 2;
 $view = 'pdf';

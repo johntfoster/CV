@@ -15,7 +15,7 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: cv.tex
-          args: 
+          args: -pdfxe
       - name: Build html version
         uses: xu-cheng/latex-action@v2
         with:
