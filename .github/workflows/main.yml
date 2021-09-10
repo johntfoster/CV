@@ -4,8 +4,9 @@ jobs:
     runs-on: "ubuntu-latest"
     container: 
       image: johntfoster/texlive:latest
+      options: -w /usr/src/app
       volumes: 
-        - ${{ github.workspace }}:/var/texlive
+        - ${{ github.workspace }}:/usr/src/app
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
