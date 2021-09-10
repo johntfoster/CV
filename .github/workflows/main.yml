@@ -9,12 +9,8 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
-      - name: Get submodules
-        uses: textbook/git-checkout-submodule-action@master
-      - name: Setup mamba and environment
-        uses: mamba-org/provision-with-micromamba@main
         with:
-          environment-file: environment.yml
+          submodules: true
       - name: Build Cockrell School version
         run: latexmk -pdfxe cv.tex
       - name: Build HTML version
