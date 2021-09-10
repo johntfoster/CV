@@ -32,3 +32,4 @@ jobs:
           author_email: johntfosterjr@gmail.com
           branch: gh-actions-autocommit
           pull_strategy: 'NO-PULL'
+          push: 'origin gh-actions-autocommit -f'
