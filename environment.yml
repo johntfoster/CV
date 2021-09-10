@@ -1,5 +1,0 @@
-channels:
-  - conda-forge
-  - defaults
-dependencies:
-  - pandoc=2.9.2
