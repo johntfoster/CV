@@ -1,4 +1,5 @@
 on: push
+branch: master
 jobs:
   build-cv:
     runs-on: "ubuntu-latest"
@@ -29,3 +30,4 @@ jobs:
           author_name: John T. Foster
           author_email: johntfosterjr@gmail.com
           branch: gh-actions-autocommit
+          pull_strategy: 'NO-PULL'
