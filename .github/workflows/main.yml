@@ -22,3 +22,10 @@ jobs:
         run: |
           vi cv.html +"set fileencoding=utf-8" +qall +wq 
           pandoc cv.html -o cv.docx
+      - name: Commit changes to branch
+      - uses: EndBug/add-and-commit@v7
+        with: 
+          add: 'cv.pdf cv_cockrell.pdf cv.html cv.docx'
+          author_name: John T. Foster
+          author_email: johntfosterjr@gmail.com
+          branch: gh-actions-autocommit
