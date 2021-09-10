@@ -2,6 +2,9 @@ on: push
 jobs:
   build-cv:
     runs-on: "ubuntu-latest"
+    container: 
+      image: johntfoster/texlive:latest
+      options: -v `pwd`:/var/texlive
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
@@ -11,19 +14,11 @@ jobs:
         uses: mamba-org/provision-with-micromamba@main
         with:
           environment-file: environment.yml
-      - name: Rebuild
-        uses: xu-cheng/latex-action@v2
-        with:
-          root_file: cv.tex
-          args: -pdfxe
-      - name: Build html version
-        uses: xu-cheng/latex-action@v2
-        with:
-          root_file: cv.tex
-          args: -pdf -dvi- -ps-
+      - name: Build Cockrell School version
+        run: latexmk -pdfxe cv.tex
+      - name: Build HTML version
+        run: latexmk -pdfxe cv.tex
       - name: Convert html to docx
-        shell: bash -l {0}
         run: |
-          sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends vim
           vi cv.html +"set fileencoding=utf-8" +qall +wq 
           pandoc cv.html -o cv.docx
