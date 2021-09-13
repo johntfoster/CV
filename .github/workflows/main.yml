@@ -27,9 +27,16 @@ jobs:
       - name: Commit changes to branch
         uses: EndBug/add-and-commit@v7
         with: 
-          add: 'cv.pdf cv_cockrell.pdf cv.html cv.docx'
+          add: cv.pdf cv_cockrell.pdf cv.html cv.docx
           author_name: John T. Foster
           author_email: johntfosterjr@gmail.com
           branch: gh-actions-autocommit
           pull_strategy: 'NO-PULL'
           push: 'origin gh-actions-autocommit -f'
+      - name: Trigger website rebuild
+        shell: bash -l {0}
+        run: |
+          curl --request POST \
+          --url 'https://api.github.com/repos/johnfoster-pge-utexas/johnfoster-pge-utexas.github.io/dispatches' \
+          --header 'authorization: Bearer ${{ secrets.GH_SECRET_TOKEN }}' \
+          --data '{"event_type": "trigger"}'
