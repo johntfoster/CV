@@ -17,7 +17,7 @@ jobs:
       - name: Build Cockrell School version
         run: latexmk -pdfxe -jobname="cv_cockrell" cv.tex
       - name: Clean
-        run: latexmk -C
+        run: latexmk -c -jobname="cv_cockrell"
       - name: Build personal version
         run: latexmk cv.tex
       - name: Build html version
