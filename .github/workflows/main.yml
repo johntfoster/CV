@@ -14,10 +14,12 @@ jobs:
         uses: actions/checkout@v2
         with:
           submodules: true
-      - name: Build personal version
-        run: latexmk cv.tex
       - name: Build Cockrell School version
         run: latexmk -pdfxe -jobname="cv_cockrell" cv.tex
+      - name: Clean
+        run: latexmk -C
+      - name: Build personal version
+        run: latexmk cv.tex
       - name: Build html version
         run: latexmk -pdf cv.tex
       - name: Convert html to docx
