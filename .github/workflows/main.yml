@@ -15,7 +15,7 @@ jobs:
         with:
           submodules: true
       - name: Build personal version
-        run: latexmk cv.tex
+        run: latexmk -jobname="cv_personal" cv.tex
       - name: Build Cockrell School version
         run: latexmk -pdfxe -jobname="cv_cockrell" cv.tex
       - name: Build html version
@@ -27,7 +27,7 @@ jobs:
       - name: Commit changes to branch
         uses: EndBug/add-and-commit@v7
         with: 
-          add: 'cv.pdf cv_cockrell.pdf cv.html cv.docx'
+          add: 'cv_personal.pdf cv_cockrell.pdf cv.html cv.docx'
           author_name: John T. Foster
           author_email: johntfosterjr@gmail.com
           branch: gh-actions-autocommit
