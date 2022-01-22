@@ -25,7 +25,7 @@ jobs:
           vi cv.html +"set fileencoding=utf-8" +qall +wq 
           pandoc cv.html -o cv.docx
       - name: Commit changes to branch
-        uses: EndBug/add-and-commit@v7
+        uses: EndBug/add-and-commit@v8
         with: 
           add: 'cv_personal.pdf cv_cockrell.pdf cv.html cv.docx'
           author_name: John T. Foster
