@@ -25,13 +25,15 @@ jobs:
           vi cv.html +"set fileencoding=utf-8" +qall +wq 
           pandoc cv.html -o cv.docx
       - name: Commit changes to branch
-        uses: EndBug/add-and-commit@v8
+        uses: stefanzweifel/git-auto-commit-action@v4
         with: 
-          add: 'cv_personal.pdf cv_cockrell.pdf cv.html cv.docx'
-          author_name: John T. Foster
-          author_email: johntfosterjr@gmail.com
-          pull: 'NO-PULL'
-          push: 'origin gh-actions-autocommit -f'
+          branch: gh-actions-autocommit
+          file_pattern: cv_personal.pdf cv_cockrell.pdf cv.html cv.docx
+          commit_user_name: John T. Foster
+          commit_user_email: johntfosterjr@gmail.com
+          push_options: --force
+          skip_fetch: true
+          skip_checkout: true
       - name: Trigger website rebuild
         shell: bash -l {0}
         run: |
