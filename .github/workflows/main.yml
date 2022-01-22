@@ -30,7 +30,6 @@ jobs:
           add: 'cv_personal.pdf cv_cockrell.pdf cv.html cv.docx'
           author_name: John T. Foster
           author_email: johntfosterjr@gmail.com
-          branch: gh-actions-autocommit
           pull: 'NO-PULL'
           push: 'origin gh-actions-autocommit -f'
       - name: Trigger website rebuild
