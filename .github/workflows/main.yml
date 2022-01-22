@@ -31,7 +31,7 @@ jobs:
           author_name: John T. Foster
           author_email: johntfosterjr@gmail.com
           branch: gh-actions-autocommit
-          pull_strategy: 'NO-PULL'
+          pull: 'NO-PULL'
           push: 'origin gh-actions-autocommit -f'
       - name: Trigger website rebuild
         shell: bash -l {0}
