@@ -13,9 +13,10 @@
 \ifdefined\iscockrell
 \usepackage{enumitem}
 \fi
-\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[usenames,dvipsnames,table]{xcolor}
 \usepackage{bibentry}
-\PassOptionsToPackage{hyphens}{url}\usepackage[dvips]{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\usepackage[]{hyperref}
 \usepackage{geometry}
 \usepackage[yyyymmdd,hhmmss]{datetime}
 \urlstyle{same}
@@ -170,6 +171,15 @@
       #1%
     \fi
 }
+
+\definecolor{Gray}{gray}{0.9}
+\definecolor{LightGray}{gray}{0.4}
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\renewcommand{\arraystretch}{1.5}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 
 \begin{document}
 \sloppy
