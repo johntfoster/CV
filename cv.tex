@@ -75,7 +75,7 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-\lhead{Department of Petroleum and Geosystems Engineering}
+\lhead{Department of Petroleum and Geosystems Engineering \hfill Revised:\today}
 \cfoot{\thepage}
 \renewcommand{\headrulewidth}{0pt}
 %
@@ -275,6 +275,8 @@ John T. Foster is an associate professor in the Departments of Petroleum and Geo
 
 \vfill 
 % Footer
+\ifdefined\iscockrell
+\else
 \HCode{<center>}
 \begin{center}
     \begin{small}
@@ -282,6 +284,7 @@ John T. Foster is an associate professor in the Departments of Petroleum and Geo
     \end{small}
 \end{center}
 \HCode{</center>}
+\fi
 
 \bibliographystyle{myplainurl}
 %\bibliographystyle{plainurl}
