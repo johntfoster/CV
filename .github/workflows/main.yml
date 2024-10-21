@@ -15,11 +15,17 @@ jobs:
         with:
           submodules: true
       - name: Build personal version
-        run: latexmk -jobname="cv_personal" cv.tex
+        run: |
+          latexmk -jobname="cv_personal" cv.tex
+          latexmk -C
       - name: Build Cockrell School version
-        run: latexmk -pdfxe -jobname="cv_cockrell" cv.tex
+        run: |
+          latexmk -pdfxe -jobname="cv_cockrell" cv.tex
+          latexmk -C
       - name: Build html version
-        run: latexmk -pdf cv.tex
+        run: |
+          latexmk -pdf cv.tex
+          latexmk -C
       - name: Convert html to docx
         run: |
           vi cv.html +"set fileencoding=utf-8" +qall +wq 
