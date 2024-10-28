@@ -1,5 +1,5 @@
 $latex = 'latex -shell-esc -interaction=nonstopmode %O \\\def\\\ispdf{1} \\\input %S';
-$xelatex = 'latex -shell-esc -interaction=nonstopmode %O \\\def\\\iscockrell{1} \\\input %S';
+$pdfxelatex = 'xelatex -shell-esc -interaction=nonstopmode %O \\\def\\\iscockrell{1} \\\input %S';
 $pdflatex = 'htlatex %S "myfonts, -css, NoFonts"';
 $pdf_mode = 2;
 $view = 'pdf';
