@@ -16,7 +16,7 @@ jobs:
           submodules: true
       - name: Build personal version
         run: |
-          latexmk -jobname="cv_personal" -f cv.tex
+          latexmk -jobname="cv_personal" -pdf -f cv.tex
       - name: Build Cockrell School version
         run: |
           latexmk -pdflua -jobname="cv_cockrell" -f cv.tex
